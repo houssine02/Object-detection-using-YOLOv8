@@ -12,8 +12,8 @@ import helper
 
 # Setting page layout
 st.set_page_config(
-    page_title="Détection d'objets à l'aide de YOLOv8",
-    page_icon="🤖",
+    page_title="Application Web de Vision par Ordinateur",
+    page_icon="Application Web de Vision par Ordinateur",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -23,18 +23,70 @@ st.set_page_config(
 # Ajout du logo de l'université
 logo_path = "./images/logo.png"  # Remplacez par le chemin correct de votre logo
 logo = Image.open(logo_path)
-st.image(logo, use_column_width=True)
 
-# Main page heading
-st.title("Détection d'objets à l'aide de YOLOv8")
+
+# Afficher le logo redimensionné#st.image(logo, use_column_width=False)
+
+col1, col2, col3 = st.columns([1, 1, 1])  # Create three columns
+with col2:  # Display the logo in the middle column
+    logo_path = "./images/logo.png"  # Replace with your logo path
+    logo = Image.open(logo_path)
+    st.image(logo, use_column_width=False)  # Display the logo
+
+
+
+
+
+
+
+# Utiliser HTML pour centrer le logo et le titre "Master"
+st.markdown(
+    """
+   
+       
+        <h2 style="font-style: italic;text-align: center; font-weight: bold;">Master : Big Data & Intelligence Artificielle</h2>
+        <br>
+  
+    """,
+    unsafe_allow_html=True
+)
+
+
+
+# Utiliser HTML pour centrer le titre
+st.markdown(
+    """
+    <div style="text-align: center;">
+        <h1>Mini Projet : Migration vers une Infrastructure Cloud</h1>
+        <h2>Développement et Déploiement d'une Application Web de Vision par Ordinateur avec AWS</h2>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    """,
+    unsafe_allow_html=True
+)
 
 # Section "Réalisé par"
-st.header("Réalisé par")
-st.write("Nom de l'étudiant")
+st.header("Réalisés par : ")
+st.markdown("<h3>ABARAGH Youssef</h3>", unsafe_allow_html=True)
+st.markdown("<h3>AIT YAHIA EL HOCINE</h3>", unsafe_allow_html=True)
 
 # Section "Encadré par"
-st.header("Encadré par")
-st.write("Nom de l'encadrant")
+st.header("Encadré par : ")
+st.markdown("<h3>Mr. ANTARI JILALI</h3>", unsafe_allow_html=True)
+
+st.markdown(
+    """
+   
+    <br>
+    <br>
+    <br>
+    <br>
+    """,
+    unsafe_allow_html=True
+)
 
 # Sidebar
 st.sidebar.header("Configuration du modèle ML")
